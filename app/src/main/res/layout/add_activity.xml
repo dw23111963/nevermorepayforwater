@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/tvLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Название города:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/City"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="Например: Москва"
+        android:background="@android:drawable/editbox_background"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvLoc"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Широта:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoc" />
+
+    <EditText
+        android:id="@+id/etLat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="автоматически"
+        android:background="@android:drawable/editbox_background"
+        android:padding="12dp"
+        android:inputType="numberSigned|numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvLat"
+        app:layout_constraintTop_toBottomOf="@+id/City" />
+
+    <TextView
+        android:id="@+id/tvLon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Долгота:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLat" />
+
+    <EditText
+        android:id="@+id/etLon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="автоматически"
+        android:background="@android:drawable/editbox_background"
+        android:padding="12dp"
+        android:inputType="numberSigned|numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvLon"
+        app:layout_constraintTop_toBottomOf="@+id/etLat" />
+
+    <Button
+        android:id="@+id/butFindCoords"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Найти координаты по названию"
+        android:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLon" />
+
+    <Button
+        android:id="@+id/butSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Сохранить"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/butCancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butFindCoords" />
+
+    <Button
+        android:id="@+id/butCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:text="Отменить"
+        android:backgroundTint="#F44336"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/butSave"
+        app:layout_constraintTop_toBottomOf="@+id/butFindCoords" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

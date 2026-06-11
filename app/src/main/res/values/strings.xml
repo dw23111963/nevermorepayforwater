@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name" translatable="false">nevermorepayforwater</string>
+    <string name="refresh_data" translatable="false">Обновляем данные</string>
+    <string name="refreshed" translatable="false">Обновлено </string>
+    <string name="tempro" translatable="false">t воздуха </string>
+    <string name="forecast_addr" translatable="false">https://api.open-meteo.com/v1/forecast</string>
+    <string name="lat_condition" translatable="false">\?latitude=</string>
+    <string name="lon_condition" translatable="false">&amp;longitude=</string>
+    <string name="add_condition" translatable="false">&amp;current_weather=true</string>
+    <string name="cur_weather" translatable="false">current_weather</string>
+    <string name="temperature" translatable="false">temperature</string>
+    <string name="err_text" translatable="false">Ошибка данных, нужно проверить координаты</string>
+    <string name="deleteAll" translatable="false">Очистить </string>
+    <string name="add" translatable="false">Добавить</string>
+    <string name="exit" translatable="false">Выход</string>
+    <string name="delete" translatable="false">удалить</string>
+    <string name="edit" translatable="false">Редактировать</string>
+    <string name="save" translatable="false">Сохранить</string>
+    <string name="cancel" translatable="false">Отменить</string>
+    <string name="location" translatable="false">Локация</string>
+    <string name="tvLat" translatable="false">Широта</string>
+    <string name="tvLon" translatable="false">Долгота</string>
+    <string name="err_connect" translatable="false">Ошибка связи, погоды не будет.</string>
+
+</resources>

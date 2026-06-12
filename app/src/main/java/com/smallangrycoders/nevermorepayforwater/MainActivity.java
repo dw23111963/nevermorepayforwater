@@ -27,6 +27,7 @@ import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     DBCities stcConnector;
@@ -103,14 +104,16 @@ public class MainActivity extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onResponse(Call call, final Response response) throws IOException {
-                if (!response.isSuccessful())
-                    {
+                if (!response.isSuccessful()) {
                     MainActivity.this.runOnUiThread(() -> {
-                        state.setTemp(oContext.getString(R.string.err_text));
+                        state.setTemp("Ошибка данных, нужно проверить координаты");
                         adapter.notifyDataSetChanged();
                         stcConnector.update(state);
+
+                        // 👇 ДОБАВЬТЕ ЭТУ СТРОКУ
+                        Toast.makeText(MainActivity.this, "Ошибка сервера, попробуйте позже", Toast.LENGTH_LONG).show();
                     });
-                    }
+                }
                 else
                     {
                     final String responseData = response.body().string();
@@ -140,11 +143,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 MainActivity.this.runOnUiThread(() -> {
-                    state.setTemp(String.valueOf(R.string.err_connect));
+                    state.setTemp("Ошибка связи...");
                     adapter.notifyDataSetChanged();
                     stcConnector.update(state);
-                });
 
+
+                    Toast.makeText(MainActivity.this, "Нет интернета, проверьте подключение", Toast.LENGTH_LONG).show();
+                });
                 e.printStackTrace();
             }
 
